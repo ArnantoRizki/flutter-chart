@@ -11,7 +11,7 @@ class DataPage extends StatefulWidget {
 
 
 class _DataPageState extends State<DataPage> {
-  GradeChartController chartController;
+  ChartController chartController;
   double height, width;
   double heightStat;
 
@@ -34,7 +34,7 @@ class _DataPageState extends State<DataPage> {
   @override
   void initState() {
     super.initState();
-    chartController = GradeChartController();
+    chartController = ChartController();
   }
 
   @override
@@ -54,7 +54,7 @@ class _DataPageState extends State<DataPage> {
         child: CustomScrollView(
           slivers: [
             SliverToBoxAdapter(
-              child: GradeChart(
+              child: Chart(
                 controller: chartController,
                 width: width,
                 heightStat: heightStat,

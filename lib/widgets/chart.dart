@@ -32,7 +32,7 @@ class ScoreDetail{
   ScoreDetail(this.name, this.value);
 }
 
-class GradeChartController{
+class ChartController{
   int _index;
   ScoreDetail _scoreDetail;
 
@@ -43,7 +43,7 @@ class GradeChartController{
     _scoreDetail = scoreDetail;
   }
 
-  void copy(GradeChartController anotherController){
+  void copy(ChartController anotherController){
     assert(anotherController != null);
 
     _index = anotherController.index;
@@ -60,15 +60,15 @@ class GradeChartController{
   }
 }
 
-class GradeChart extends StatefulWidget {
+class Chart extends StatefulWidget {
   final double width;
   final double heightStat;
   final double standart;
   final List<ScoreDetail> lisnilai;
-  final Function(GradeChartController) onTap;
-  final GradeChartController controller;
+  final Function(ChartController) onTap;
+  final ChartController controller;
 
-  GradeChart({
+  Chart({
     Key key, 
     this.width, 
     this.heightStat, 
@@ -79,10 +79,10 @@ class GradeChart extends StatefulWidget {
   }) : assert(controller!=null), super(key: key);
   
   @override
-  _GradeChartState createState() => _GradeChartState();
+  _ChartState createState() => _ChartState();
 }
 
-class _GradeChartState extends State<GradeChart> {
+class _ChartState extends State<Chart> {
   // int clicked = -1;
   double highest, lowest;
 
